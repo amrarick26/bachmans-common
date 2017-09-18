@@ -513,7 +513,7 @@ function bachShipmentsService($q, buyerid, OrderCloudSDK, bachWiredOrders, bachB
                     'RequestedDeliveryDate': formatDate(li.xp.DeliveryDate),
                     'addressType': li.xp.addressType, //possible values: Residence, Funeral, Cemetary, Church, School, Hospital, Business, InStorePickUp
                     'RecipientName': li.ShippingAddress.FirstName + ' ' + li.ShippingAddress.LastName,
-                    'SenderName': isAnon ? order.BillingAddress.FirstName + ' ' + order.BillingAddress.LastName : order.Fromuser.FirstName + ' ' + order.FromUser.LastName,
+                    'SenderName': isAnon ? order.BillingAddress.FirstName + ' ' + order.BillingAddress.LastName : order.FromUser.FirstName + ' ' + order.FromUser.LastName,
                     'FromUserID': order.FromUserID,
                     'CSRID': order.xp.CSRID || 'Web', //will be populated if placed on OMS
                     'Tax': shipment.Tax, //cumulative li.xp.Tax for all li in this shipment
