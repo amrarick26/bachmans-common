@@ -51,11 +51,20 @@ function bachBuyerXpService($q, $http, $interval, nodeapiurl){
     }
 
     function _update(token, update){
-        return $http.put(buyerxpurl, update, {headers: {'oc-token': token}});
+        return $http.put(buyerxpurl, update, {headers: {'oc-token': token}})
+            .then(function(response){
+                buyerxp = {xp: response.data};
+                return buyerxp;
+            });   
     }
 
     function _patch(patch, token){
-        return $http.patch(buyerxpurl, patch, {headers: {'oc-token': token}});
+        return $http.patch(buyerxpurl, patch, {headers: {'oc-token': token}})
+            .then(function(response){
+                buyerxp = {xp: response.data};
+                return buyerxp;
+            });   
+        
     }
 
     return service;
